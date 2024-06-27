@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .banner img{
-            filter: grayscale(70);
-        }
-    </style>
 </head>
 <body>
     <div class="banner">
-        <img src="{{ asset('img/testimg.jpg') }}" alt="" width="100%" height="200px">
+        <img src="{{ asset('img/testimg.jpg') }}" class="h-52 w-100" style="filter: grayscale(70)">
     </div>
     <div class="container mx-auto p-4">
         <div id="app">

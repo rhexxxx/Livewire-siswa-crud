@@ -1,17 +1,26 @@
 <?php
 
-use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\CreateSiswa;
+use App\Livewire\EditSiswa;
+use App\Livewire\SiswaList;
+use App\Http\Controllers\SiswaController;
 
-Route::resource('/', SiswaController::class);
+Route::resource('Siswas', SiswaController::Class);
+Route::get('/', SiswaList::class)->name('index');
+Route::get('/create', CreateSiswa::class)->name('create');
+Route::get('/edit/{id}', EditSiswa::class)->name('edit');
 
-Route::get('/', [SiswaController::class, 'index'])->name('index');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/create', [SiswaController::class, 'create'])->name('create');
-Route::post('/', [SiswaController::class, 'store'])->name('store');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/', Siswalist::class)->name('index');
+});
 
-Route::get('/edit/{id}', [SiswaController::class, 'edit'])->name('edit');
-Route::put('/update/{id}', [SiswaController::class, 'update'])->name('update');
-
-Route::delete('/destroy/{id}', [SiswaController::class, 'destroy'])->name('destroy');
-
+require __DIR__.'/auth.php';
