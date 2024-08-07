@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Jurusan;
 use App\Models\Siswa;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'nama' => 'bagas',
-                'nis' => '20023',
+                'nis' => '20026',
                 'kelas' => 'XI DPIB 1',
                 'jurusan' => 'DPIB',
                 'gender' => 'laki laki',
@@ -45,5 +46,24 @@ class DatabaseSeeder extends Seeder
         foreach ($siswas as $siswa) {
             Siswa::create($siswa);
         }
+
+        $users = [
+            [
+                'name' => 'Rheino perean',
+                'email' => 'rheinoperean@gmail.com',
+                'password' => 'ayamgoreng123'
+            ]
+        ];
+
+        User::create($users);
+
+        // $jurusans = [
+        //     ['nama' => 'Rekayasa Perangkat Lunak'], 
+        //     ['nama' => 'Teknik Komputer dan Jaringan'], 
+        //     ['nama' => 'Mutimedia'], 
+        //     ['nama' => 'Desain Komunikasi Visual']
+        // ];
+
+        // Jurusan::create($jurusans);
     }
 }

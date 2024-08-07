@@ -13,7 +13,8 @@
     </div>
     <div class="container mx-auto p-4">
         <div id="app">
-            <x-table :siswas="$siswas" />
+            <livewire:search />
+            <livewire:siswa-list :siswas="$siswas" />
         </div>
     </div>
     <script>

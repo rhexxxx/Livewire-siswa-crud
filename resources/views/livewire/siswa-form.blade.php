@@ -28,7 +28,8 @@
             <label for="gender" class="block text-sm font-medium text-gray-700">Gender:</label>
             {{-- <input type="text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="gender" wire:model="gender" placeholder="Masukan gender..." required> --}}
             <select name="gender" id="gender" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" wire:model="gender" required>
-                 <option value="Perempuan">Perempuan</option>
+                <option value="">-Pilih Gender-</option> 
+                <option value="Perempuan">Perempuan</option>
                 <option value="laki laki">Laki Laki</option>
                 <option value="Netral">Netral</option>
             </select>
@@ -40,6 +41,7 @@
         <div class="mb-4">
             <label for="jurusan" class="block text-sm font-medium text-gray-700">Jurusan:</label>
             <select name="jurusan" id="jurusan" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" wire:model="jurusan" required> 
+                <option value="">-Pilih Jurusan-</option>
                 <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                 <option value="Teknik Komputer Jaringan">Teknik Komputer Dan Jaringan</option>
                 <option value="MultiMedia">Multimedia</option>

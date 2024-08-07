@@ -20,7 +20,6 @@
         <tbody>
             @foreach ($siswas as $siswa)
             <div wire:key = "{{ $siswa->id }}">
-
             </div>
                 <tr>
                     <td class="border px-4 py-2">{{ $siswa->nis }}</td>
@@ -28,9 +27,13 @@
                     <td class="border px-4 py-2">{{ $siswa->kelas }}</td>
                     <td class="border px-4 py-2">{{ $siswa->gender }}</td>
                     <td class="border px-4 py-2">{{ $siswa->jurusan }}</td>
-                    <td class="border px-4 py-2">
+                <td class="border px-4 py-2">
                         <div class="d-flex mx-auto">
-                            <button wire:click="deleteSiswa({{ $siswa->id }})" type="submit" class="bg-rose-700 hover:bg-rose-500 text-white font-bold py-2 px-4 rounded" onclick="return confirm('Are You Sure ?')">Hapus</button>
+                            <button 
+                            wire:click="deleteSiswa({{ $siswa->id }})"
+                            wire:confirm = "are you sure to delete {{ $siswa->nama }}'s data?"
+                            type="submit" class="bg-rose-700 hover:bg-rose-500 text-white font-bold py-2 px-4 rounded">
+                                Hapus</button>
                             <a href="{{ route('edit', $siswa->id) }}" class="bg-emerald-700 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded ms-2">Edit</a>
                         </div>
                     </td>
@@ -38,4 +41,5 @@
             @endforeach
         </tbody>
     </table>
+    <livewire:todo/>
 </div>

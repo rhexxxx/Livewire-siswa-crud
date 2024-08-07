@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Siswa extends Model
+class Jurusan extends Model
 {
     use HasFactory;
-
-    protected $guarded = ["id"];
-    // public function jurusan(): BelongsTo
-    // {
-    //     return $this->BelongsTo(Jurusan::class);
-    // }
+    public function siswa():HasMany
+    {
+        return $this->HasMany(Siswa::class);
+    }
 }
